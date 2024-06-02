@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+    h2 Gatherings
+    ul
+        each gathering in gatherings
+            li
+                a(href=`/gatherings/${gathering._id}`) #{gathering.purpose} on #{gathering.date.toDateString()} at #{gathering.location}

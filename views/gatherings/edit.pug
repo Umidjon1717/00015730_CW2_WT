@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h2 Edit Gathering
+    form(action=`/gatherings/${gathering._id}?_method=PUT`, method='POST')
+        div
+            label(for='date') Date:
+            input(type='date', name='date', value=gathering.date.toISOString().substring(0, 10), required)
+        div
+            label(for='location') Location:
+            input(type='text', name='location', value=gathering.location, required)
+        div
+            label(for='purpose') Purpose:
+            input(type='text', name='purpose', value=gathering.purpose, required)
+        div
+            button(type='submit') Update Gathering

@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h2 Add New Gathering
+    form(action='/gatherings', method='POST')
+        div
+            label(for='date') Date:
+            input(type='date', name='date', required)
+        div
+            label(for='location') Location:
+            input(type='text', name='location', required)
+        div
+            label(for='purpose') Purpose:
+            input(type='text', name='purpose', required)
+        div
+            button(type='submit') Create Gathering
